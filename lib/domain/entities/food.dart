@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import './nutrient.dart';
+import 'nutrient.dart';
 
 class Food extends Equatable {
   final String dataType;
