@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 
 import '../../domain/entities/food.dart';
+import '../../domain/entities/nutrient.dart';
+import 'nutrient_model.dart';
 
 class FoodModel extends Equatable {
   final String dataType;
@@ -32,7 +34,7 @@ class FoodModel extends Equatable {
       description: json['description'],
       fdcId: json['fdcId'],
       foodNutrients: (json['foodNutrients'] as List)
-          .map((nutrient) => Nutrient.fromJson(nutrient))
+          .map((nutrient) => NutrientModel.fromJson(nutrient))
           .toList(),
       publicationDate: json['publicationDate'],
       brandOwner: json['brandOwner'],
