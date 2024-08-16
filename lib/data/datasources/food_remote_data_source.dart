@@ -1,5 +1,5 @@
-import '../../domain/entities/food.dart';
+import '../models/food_model.dart';
 
 abstract class FoodRemoteDataSource {
-  Future<Food> getFood(int foodId);
+  Future<FoodModel> getFoodDetails(int foodId);
 }
