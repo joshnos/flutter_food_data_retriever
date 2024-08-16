@@ -32,10 +32,18 @@ class FoodPage extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           } else if (state is FoodLoaded) {
             final food = state.food;
-            return Column(
+            return Center(
+              child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(food.description),
+                Text('Food description: ${food.description}'),
+                Text('FDC ID: ${food.fdcId}'),
+                Text('Publication Date: ${food.publicationDate}'),
+                Text('Food Code: ${food.foodCode}'),
+                Text('Data Type: ${food.dataType}'),
               ],
+            ),
             );
           } else {
             return const Center(child: Text('No data available.'));
