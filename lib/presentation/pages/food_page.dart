@@ -24,6 +24,10 @@ class FoodPage extends StatelessWidget {
           }
         },
         builder: (context, state) {
+          if (state is FoodInitial) {
+            BlocProvider.of<FoodBloc>(context).add(GetFoodDetails(foodId));
+            return const Center(child: CircularProgressIndicator());
+          }
           if (state is FoodLoading) {
             return const Center(child: CircularProgressIndicator());
           } else if (state is FoodLoaded) {

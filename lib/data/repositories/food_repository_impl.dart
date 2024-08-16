@@ -19,7 +19,7 @@ class FoodRepositoryImpl implements FoodRepository {
 
   @override
   Future<Either<Failure, Food>> getFoodDetails(int foodId) async {
-    if (await networkInfo.isConnected) {
+    if (networkInfo.isConnected) {
       try {
         final remoteFood = await remoteDataSource.getFoodDetails(foodId);
         return Right(remoteFood.toDomain());

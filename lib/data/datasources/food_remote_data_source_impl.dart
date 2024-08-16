@@ -18,7 +18,6 @@ class FoodRemoteDataSourceImpl implements FoodRemoteDataSource {
       'https://api.nal.usda.gov/fdc/v1/food/$foodId',
       queryParameters: {
         'format': 'abridged',
-        'nutrients': '203,204,205',
         'api_key': dotenv.env['API_KEY'],
       },
     );
